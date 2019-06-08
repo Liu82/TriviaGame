@@ -1,6 +1,10 @@
+
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
 $(document).ready(function(){
   
-    // event listeners
+  
     $("#remaining-time").hide();
     $("#start").on('click', trivia.startGame);
     $(document).on('click' , '.option', trivia.guessChecker);
@@ -8,7 +12,7 @@ $(document).ready(function(){
   })
   
   var trivia = {
-    // trivia properties
+  
     correct: 0,
     incorrect: 0,
     unanswered: 0,
@@ -16,7 +20,7 @@ $(document).ready(function(){
     timer: 20,
     timerOn: false,
     timerId : '',
-    // questions options and answers data
+    
     questions: {
       1: 'How Did Daenerys Targaryen Eventually Hatch Her Dragon Eggs?',
       2: 'What Is The Only Thing That Can Put Out Vilatile Wildfire? ',
@@ -24,8 +28,7 @@ $(document).ready(function(){
       4: 'Which Direwolf Was Killed In Retaliation For the Attack On Prince Joffrey?',
       5: "Arya's Punishment For Stealing From The Many-Faced God is?",
       6: 'The Name Of King Tommens Favorite Cat is?',
-    }
-    {
+    
     Options: 
       1: ['In A Lightning Storm', 'In A Funeral Pyre', 'In A Frozen Cave'],
       2: ['Sand', 'Water', 'Dragon Blood','Sunlight]',
@@ -33,8 +36,7 @@ $(document).ready(function(){
       4: ['Ghost', 'Lady', 'Nymeria', 'Summer'],
       5: ['Weight Gain','Memory Loss','Blindness','Loss Of Appetite'],
       6: ['Little Lion','Boo','Kitty','Ser Pounce'],
-    }
-    {
+    
     Answers:
       1: 'In A Funeral Pyre',
       2: 'Sand',
