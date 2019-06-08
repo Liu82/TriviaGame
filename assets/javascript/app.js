@@ -23,17 +23,10 @@ function countdown() {
           seconds = 59;
       }
       else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
-
-      $('.js-timeout').html(minutes + ':' + seconds);
-
+  $('.js-timeout').html(minutes + ':' + seconds);
       if (minutes == 0 && seconds == 0) clearInterval(interval);
   }, 1000);
 }
-
-
-
-
-
 
   var trivia = {
   
@@ -53,26 +46,26 @@ function countdown() {
       5: "Arya's Punishment For Stealing From The Many-Faced God is?",
       6: 'The Name Of King Tommens Favorite Cat is?',
     
-    Options: 
+    Options: {
       1: ['In A Lightning Storm', 'In A Funeral Pyre', 'In A Frozen Cave'],
-      2: ['Sand', 'Water', 'Dragon Blood','Sunlight]',
+      2: ['Sand', 'Water', 'Dragon Blood','Sunlight]'],
       3: ['Weirwood', 'Fire', 'Valyrian Steel', 'Icicles'],
       4: ['Ghost', 'Lady', 'Nymeria', 'Summer'],
       5: ['Weight Gain','Memory Loss','Blindness','Loss Of Appetite'],
       6: ['Little Lion','Boo','Kitty','Ser Pounce'],
-    
-    Answers:
-      1: 'In A Funeral Pyre',
-      2: 'Sand',
-      3: 'Valyrian Steel',
-      4: 'Lady',
-      5: 'Blindness',
-      6: 'Ser Pounce',
-    
     }
-        startGame: function (){
-     
-      trivia.currentSet = 0;
+    
+    Answers: {
+      1: ['In A Funeral Pyre'],
+      2: ['Sand'],
+      3: ['Valyrian Steel'],
+      4: ['Lady'],
+      5: ['Blindness'],
+      6: ['Ser Pounce'],
+       }
+        
+    StartGame: function (){
+     trivia.currentSet = 0;
       trivia.correct = 0;
       trivia.incorrect = 0;
       trivia.unanswered = 0;
@@ -91,8 +84,7 @@ function countdown() {
       
    
       trivia.nextQuestion();
-      
-    }
+      }
  
     nextQuestion : function(){
       
@@ -160,8 +152,6 @@ function countdown() {
       
      
       var resultId;
-      
-   
       var currentAnswer = Object.values(trivia.answers)[trivia.currentSet];
       
     
